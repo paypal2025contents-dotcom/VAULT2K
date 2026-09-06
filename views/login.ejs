@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Vault2K26 — Log in</title>
+<%- include('partials/head') %>
+</head>
+<body>
+
+<div class="rings">
+  <div class="r1"></div>
+  <div class="r2"></div>
+  <div class="r3"></div>
+  <div class="r4"></div>
+</div>
+
+<div class="auth-screen">
+  <div class="auth-panel <%= error ? 'shake' : '' %>">
+    <p class="wordmark">Vault<span>2K26</span></p>
+    <p class="auth-sub">Enter your credentials to access the vault.</p>
+
+    <form method="POST" action="/login" autocomplete="off">
+      <div class="field">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" autocomplete="off" required>
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" autocomplete="off" required>
+      </div>
+      <button type="submit" class="primary-btn">Unlock</button>
+
+      <% if (error) { %>
+        <p class="error-msg">Incorrect username or password.</p>
+      <% } %>
+      <% if (registered) { %>
+        <p class="success-msg">Account created. Log in below.</p>
+      <% } %>
+    </form>
+
+    <p class="switch-link">No account yet? <a href="/register">Create one</a></p>
+  </div>
+</div>
+
+</body>
+</html>
