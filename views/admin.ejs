@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Vault2K26 — Admin</title>
+<%- include('partials/head') %>
+</head>
+<body>
+
+<header class="app-header">
+  <p class="wordmark">Vault<span style="color:var(--brass)">2K26</span></p>
+  <div class="header-right">
+    <span class="tier-badge vip">Admin</span>
+    <a href="/logout" class="ghost-btn">Sign out</a>
+  </div>
+</header>
+
+<main class="app-main">
+  <h1 class="page-title">Admin panel</h1>
+  <p class="page-desc">Manage registered users and their membership tier.</p>
+
+  <div class="tile-grid" style="max-width:320px;">
+    <a class="tile" href="/admin/users">
+      <p class="tile-name">Upgrade users</p>
+      <p class="tile-desc">View registered users and change their tier.</p>
+    </a>
+  </div>
+</main>
+
+</body>
+</html>
