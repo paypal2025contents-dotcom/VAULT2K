@@ -1,7 +1,7 @@
 {
   "button1": {
-    "name": "VIRALS SAMPLES",
-    "description": "PINAY VIRALS SAMPLES",
+    "name": "PINAYVIRALS SAMPLES",
+    "description": "",
     "link": "https://t.me/samplesvault"
   },
   "button2": {
@@ -21,8 +21,8 @@
     ]
   },
   "button3": {
-    "name": "Proof of Payments",
-    "description": "Proof of Paymentd.",
+    "name": "PROOF OF PAYMENTD",
+    "description": "",
     "link": "https://t.me/vault2k26/a/1"
   },
   "button4": {
@@ -31,9 +31,9 @@
     "link": "https://t.me/vault2k26/a/1"
   },
   "button5": {
-    "name": "Button 5 Name",
-    "description": "Short description for button 5.",
-    "pageTitle": "Page Title",
+    "name": "PRICING",
+    "description": "",
+    "pageTitle": "PRICELIST",
     "pageDescription": "Page description goes here. Explain what this page is about.",
     "table": [
       { "item": "VIP 1 / 200 PESOS", "description": "25 VIP CHANNELS" },
