@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Vault2K26 — <%= content.button2.name %></title>
+<%- include('partials/head') %>
+</head>
+<body>
+
+<header class="app-header">
+  <p class="wordmark">Vault<span style="color:var(--brass)">2K26</span></p>
+  <div class="header-right">
+    <span class="tier-badge <%= tier === 'vip' ? 'vip' : '' %>"><%= tier %></span>
+    <a href="/logout" class="ghost-btn">Sign out</a>
+  </div>
+</header>
+
+<main class="app-main">
+  <a href="/dashboard" class="back-link">&larr; Back</a>
+
+  <h1 class="page-title"><%= content.button2.name %></h1>
+  <p class="page-desc"><%= content.button2.description %></p>
+
+  <div class="item-list">
+    <% content.button2.items.forEach(function(item){ %>
+      <a class="tile" href="<%= item.link %>" target="_blank" rel="noopener noreferrer">
+        <p class="tile-name"><%= item.name %></p>
+        <p class="tile-desc"><%= item.description %></p>
+      </a>
+    <% }) %>
+  </div>
+</main>
+
+</body>
+</html>
