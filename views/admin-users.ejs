@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Vault2K26 — Registered users</title>
+<%- include('partials/head') %>
+</head>
+<body>
+
+<header class="app-header">
+  <p class="wordmark">Vault<span style="color:var(--brass)">2K26</span></p>
+  <div class="header-right">
+    <span class="tier-badge vip">Admin</span>
+    <a href="/logout" class="ghost-btn">Sign out</a>
+  </div>
+</header>
+
+<main class="app-main">
+  <a href="/admin" class="back-link">&larr; Back</a>
+
+  <h1 class="page-title">Registered users</h1>
+  <p class="page-desc">Upgrade a user to VIP, or move them back to Free.</p>
+
+  <% if (users.length === 0) { %>
+    <p class="empty-state">No users have registered yet.</p>
+  <% } else { %>
+    <table class="users-table">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Tier</th>
+          <th>Joined</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% users.forEach(function(u){ %>
+          <tr>
+            <td><%= u.username %></td>
+            <td><span class="tier-badge <%= u.tier === 'vip' ? 'vip' : '' %>"><%= u.tier %></span></td>
+            <td><%= new Date(u.createdAt).toLocaleDateString() %></td>
+            <td>
+              <form method="POST" action="/admin/upgrade" style="display:inline;">
+                <input type="hidden" name="username" value="<%= u.username %>">
+                <% if (u.tier === 'vip') { %>
+                  <input type="hidden" name="tier" value="free">
+                  <button type="submit" class="downgrade-btn">Move to Free</button>
+                <% } else { %>
+                  <input type="hidden" name="tier" value="vip">
+                  <button type="submit" class="upgrade-btn">Upgrade to VIP</button>
+                <% } %>
+              </form>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } %>
+</main>
+
+</body>
+</html>
