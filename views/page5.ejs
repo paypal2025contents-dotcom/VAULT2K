@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Vault2K26 — <%= content.button5.pageTitle %></title>
+<%- include('partials/head') %>
+</head>
+<body>
+
+<header class="app-header">
+  <p class="wordmark">Vault<span style="color:var(--brass)">2K26</span></p>
+  <div class="header-right">
+    <span class="tier-badge <%= tier === 'vip' ? 'vip' : '' %>"><%= tier %></span>
+    <a href="/logout" class="ghost-btn">Sign out</a>
+  </div>
+</header>
+
+<main class="app-main">
+  <a href="/dashboard" class="back-link">&larr; Back</a>
+
+  <h1 class="page-title"><%= content.button5.pageTitle %></h1>
+  <p class="page-desc"><%= content.button5.pageDescription %></p>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% content.button5.table.forEach(function(row){ %>
+        <tr>
+          <td><%= row.item %></td>
+          <td><%= row.description %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+
+  <a href="<%= content.button5.button.link %>" class="primary-btn" style="display:inline-block; width:auto; padding:12px 30px; text-decoration:none;" target="_blank" rel="noopener noreferrer">
+    <%= content.button5.button.name %>
+  </a>
+</main>
+
+</body>
+</html>
