@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Vault2K26 — Dashboard</title>
+<%- include('partials/head') %>
+</head>
+<body>
+
+<header class="app-header">
+  <p class="wordmark">Vault<span style="color:var(--brass)">2K26</span></p>
+  <div class="header-right">
+    <span class="tier-badge <%= tier === 'vip' ? 'vip' : '' %>"><%= tier %></span>
+    <a href="/logout" class="ghost-btn">Sign out</a>
+  </div>
+</header>
+
+<main class="app-main">
+  <h1 class="page-title">Welcome, <%= username %></h1>
+  <p class="page-desc">Choose an option below.</p>
+
+  <div class="tile-grid">
+    <a class="tile" href="<%= content.button1.link %>" target="_blank" rel="noopener noreferrer">
+      <p class="tile-name"><%= content.button1.name %></p>
+      <p class="tile-desc"><%= content.button1.description %></p>
+    </a>
+
+    <a class="tile" href="/dashboard/page2">
+      <p class="tile-name"><%= content.button2.name %></p>
+      <p class="tile-desc"><%= content.button2.description %></p>
+    </a>
+
+    <a class="tile" href="<%= content.button3.link %>" target="_blank" rel="noopener noreferrer">
+      <p class="tile-name"><%= content.button3.name %></p>
+      <p class="tile-desc"><%= content.button3.description %></p>
+    </a>
+
+    <a class="tile" href="<%= content.button4.link %>" target="_blank" rel="noopener noreferrer">
+      <p class="tile-name"><%= content.button4.name %></p>
+      <p class="tile-desc"><%= content.button4.description %></p>
+    </a>
+
+    <a class="tile" href="/dashboard/page5">
+      <p class="tile-name"><%= content.button5.name %></p>
+      <p class="tile-desc"><%= content.button5.description %></p>
+    </a>
+  </div>
+</main>
+
+</body>
+</html>
